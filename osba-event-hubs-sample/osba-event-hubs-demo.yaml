@@ -1,0 +1,49 @@
+# apiVersion: servicecatalog.k8s.io/v1beta1
+# kind: ServiceInstance
+# metadata:
+#   name: azure-event-hubs-demo
+#   namespace: default
+# spec:
+#   clusterServiceClassExternalName: azure-eventhubs
+#   clusterServicePlanExternalName: basic
+#   parameters:
+#     location: eastus
+#     resourceGroup: azure-event-hubs-demo
+# ---
+# apiVersion: servicecatalog.k8s.io/v1beta1
+# kind: ServiceBinding
+# metadata:
+#   name: azure-event-hubs-binding
+#   namespace: default
+# spec:
+#   instanceRef:
+#     name: azure-event-hubs-demo
+#   secretName: azure-event-hubs-demo
+# # ---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: osba-event-hubs-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: osba-event-hubs-demo
+    spec:
+      containers:
+      - name: osba-event-hubs-demo
+        image: neilpeterson/nepetersv1
+        ports:
+        - containerPort: 80
+        env:
+        - name: CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              key: connectionString
+              name: azure-event-hubs-demo
+        - name: PRIMARY_KEY
+          valueFrom:
+            secretKeyRef:
+              key: primaryKey
+              name: azure-event-hubs-demo

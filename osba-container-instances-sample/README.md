@@ -4,7 +4,7 @@ Simple demo using Open Service Broker for Azure to provision an Azure Container 
 
 - Azure resource group and Azure Container Instances is created with a Public IP Address.
 - A Kubernetes secret is automatically created that contains the ACI Public IP Address.
-- A pod is started that consumes the secrets, runs the [osba-container-instances-demo.py](https://github.com/neilpeterson/osba-storage-sample/blob/master/osba-storage-demo.py), which validates that the ACI instances is running.
+- A pod is started that consumes the secrets, runs the [osba-container-instances-demo.py](https://github.com/neilpeterson/open-service-broker-azure-samples/blob/master/osba-container-instances-sample/osba-container-instances-sample.py), which validates that the ACI instances is running.
 
 # Run the sample
 
@@ -26,8 +26,28 @@ helm install azure-samples/osba-container-instances-demo
 
 ## Artifacts
 
-**Storage Account / File**:
+Once the ACI instance has been created, a pod starts and sends an HTTP request to the app running in the ACI instance. The results can be seen by pulling logs on the Kubernetes pod.
 
-If you open the Azure portal and browse to the storage account / blob, you should see that a file named `hello-osba` has been created.
+First, get the pod name:
 
-![osba-storage-demo](./images/hello-osba.png)
+```
+$ kubectl get pods
+
+NAME                                            READY     STATUS    RESTARTS   AGE
+osba-container-instances-demo-9fb6ff8ff-2xbfg   1/1       Running   0          5m
+```
+
+Pull logs from the pod:
+
+```
+$ kubectl logs osba-container-instances-demo-9fb6ff8ff-2xbfg
+
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+Hello OSB ACI Container is UP..
+```

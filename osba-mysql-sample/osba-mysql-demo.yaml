@@ -8,7 +8,7 @@ spec:
   clusterServicePlanExternalName: basic50
   parameters:
     location: eastus
-    resourceGroup: osba-mysql-demo-new
+    resourceGroup: osba-mysql-demo
     sslEnforcement: disabled
 ---
 apiVersion: servicecatalog.k8s.io/v1beta1

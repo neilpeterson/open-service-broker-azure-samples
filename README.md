@@ -9,4 +9,5 @@ Each sample includes a complete Kubernetes manifest, and a ready to run Helm cha
 - [Azure Blob Storage](https://github.com/neilpeterson/open-service-broker-azure-samples/tree/master/osba-blob-storage-sample)
 - [Azure CosmosDB / MongoDB](https://github.com/neilpeterson/open-service-broker-azure-samples/tree/master/osba-cosmosdb-mongodb-sample)
 - [Azure Container Instances (AC)](https://github.com/neilpeterson/open-service-broker-azure-samples/tree/master/osba-container-instances-sample)
+- [MySQL](https://github.com/neilpeterson/open-service-broker-azure-samples/tree/master/osba-mysql-sample)
 - Azure Event Hubs - comming soon

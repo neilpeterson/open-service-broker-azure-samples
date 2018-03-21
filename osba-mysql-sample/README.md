@@ -4,7 +4,7 @@ Simple demo using Open Service Broker for Azure to provision and use MySQL on Az
 
 - Azure resource group and MySQL instance are created.
 - A Kubernetes secret is created with the MySQL connection information.
-- A pod is started that consumes the secret, runs the [osba-mysql-demo.py](https://github.com/neilpeterson/osba-mysql-demo/blob/master/osba-mysql-demo.py), which creates a database named `hello_osba`.
+- A pod is started that consumes the secret, runs the [osba-mysql-demo.py](https://github.com/neilpeterson/open-service-broker-azure-samples/blob/master/osba-mysql-sample/osba-mysql-demo.py), which creates a database named `hello_osba`.
 
 # Run the sample
 

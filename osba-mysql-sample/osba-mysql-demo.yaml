@@ -7,7 +7,7 @@ spec:
   clusterServiceClassExternalName: azure-mysql
   clusterServicePlanExternalName: basic50
   parameters:
-    location: eastus
+    location: westeurope
     resourceGroup: osba-mysql-demo
     sslEnforcement: disabled
 ---
@@ -52,4 +52,9 @@ spec:
           valueFrom:
             secretKeyRef:
               key: host
+              name: osba-mysql-demo
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              key: database
               name: osba-mysql-demo

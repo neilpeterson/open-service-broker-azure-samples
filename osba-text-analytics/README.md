@@ -1,16 +1,16 @@
 # Open Service Broker for Azure Text Analytics
 
-Simple demo using Open Service Broker for Azure to provision and use Azure Text Analytics. When running this sample, the following takes place:
+Simple demo using Open Service Broker for Azure to provision and use an Azure text analytics API. When running this sample, the following takes place:
 
-- Azure resource group and text analytics API are created
+- Azure resource group and text analytics API are created.
 - A Kubernetes secret is automatically created with the address and credentials for the text analytics API.
-- A pod is started that consumes the secrets, runs the [osba-text-analytics-demo.py](https://github.com/neilpeterson/osba-storage-sample/blob/master/osba-storage-demo.py), which submits several text analytics requests to the API.
+- A pod is started that consumes the secrets, runs the [osba-text-analytics-demo.py](https://github.com/neilpeterson/open-service-broker-azure-samples/blob/master/osba-text-analytics/osba-text-analytics-demo.py), which submits a text analytics request to the API.
 
 # Run the sample
 
 First you need a Kubernetes cluster with the Open Service Broker for Azure installed and configured. See this [documentation](https://docs.microsoft.com/en-us/azure/aks/integrate-azure) for steps on configuring OSBA in an Azure Container Service (AKS) cluster.
 
-NOTE: Azure text analytics is not currently included in the Open Service Broker for Azure. I have created a fork with this functionality. Use the following command to run my OSBA fork:
+NOTE: Azure text analytics is not currently included in the Open Service Broker for Azure. I have created a fork with this functionality. Use the following command to run the OSBA fork.
 
 ```
 helm install azure/open-service-broker-azure --name osba --namespace osba \

@@ -51,6 +51,7 @@ else:
 
 print("==============================")
 
+# Loop to prevent demo from stopping
 while True:
     print("That was cool, please shut me down now.")
     time.sleep(30)

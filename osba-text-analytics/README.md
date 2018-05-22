@@ -54,7 +54,7 @@ NAME                                        READY     STATUS        RESTARTS   A
 osba-text-analytics-demo-58c9c6d54f-p5bkn   1/1       Running       0          5s
 ```
 
-And pull logs from the pod. You will see that the application running in the pod, sent a request to the text analytics API, which returned sentiment results.
+And pull logs from the pod. You will see that the application running in the pod sent a pre-baked request to the text analytics API which returned sentiment results.
 
 ```
 $ kubectl logs osba-text-analytics-demo-58c9c6d54f-p5bkn
